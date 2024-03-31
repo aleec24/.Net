@@ -1,0 +1,12 @@
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\bin\Debug\net8.0\BlogDAL.deps.json
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\bin\Debug\net8.0\BlogDAL.dll
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\bin\Debug\net8.0\BlogDAL.pdb
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\obj\Debug\net8.0\BlogDAL.csproj.AssemblyReference.cache
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\obj\Debug\net8.0\BlogDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\obj\Debug\net8.0\BlogDAL.AssemblyInfoInputs.cache
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\obj\Debug\net8.0\BlogDAL.AssemblyInfo.cs
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\obj\Debug\net8.0\BlogDAL.csproj.CoreCompileInputs.cache
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\obj\Debug\net8.0\BlogDAL.dll
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\obj\Debug\net8.0\refint\BlogDAL.dll
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\obj\Debug\net8.0\BlogDAL.pdb
+C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\obj\Debug\net8.0\ref\BlogDAL.dll
