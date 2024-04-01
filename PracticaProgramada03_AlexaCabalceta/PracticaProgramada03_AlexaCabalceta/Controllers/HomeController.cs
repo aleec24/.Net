@@ -1,21 +1,41 @@
+using BlogDAL;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PracticaProgramada03_AlexaCabalceta.Models;
+using System;
 using System.Diagnostics;
 
 namespace PracticaProgramada03_AlexaCabalceta.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly BlogDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(BlogDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            try
+            {
+                var blogs = _context.Blogs
+                                .Include(b => b.UsuarioCreacion)
+                                .Include(b => b.Comentarios)
+                                .ThenInclude(c => c.UsuarioCreacion);
+
+                var numeroComentarios = _context.Comentarios.Count();
+                ViewData["numeroComentarios"] = numeroComentarios;
+
+                //throw new Exception("dffffg");
+
+                return View(blogs);
+            }catch (Exception ex)
+            {
+                TempData["Error"] = "Upsss! Algo salió mal. Por favor intente nuevamente.";
+                return View(new List<Blog>());
+            }
         }
 
         public IActionResult Privacy()

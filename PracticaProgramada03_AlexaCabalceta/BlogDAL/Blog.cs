@@ -24,7 +24,6 @@ namespace BlogDAL
         [Display(Name = "Descripción")]
         public string Descripcion { get; set; }
 
-        [Required]
         [Display(Name = "Autor del Blog")]
         public string UsuarioCreacionId { get; set; }
 

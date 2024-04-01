@@ -29,6 +29,12 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
+
+//Manejo de erorres
+app.UseExceptionHandler("/Error");
+app.UseStatusCodePagesWithRedirects("/Error/{0}");
+app.UseHsts();
+
 app.UseStaticFiles();
 
 app.UseRouting();

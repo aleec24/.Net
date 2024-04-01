@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BlogDAL;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace PracticaProgramada03_AlexaCabalceta.Controllers
 {
@@ -47,6 +48,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         }
 
         // GET: Comentarios/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["BlogId"] = new SelectList(_context.Blogs, "BlogId", "Titulo");
@@ -59,10 +61,16 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ComentarioId,UsuarioCreacionId,Descripcion,FechaCreacion,BlogId")] Comentario comentario)
+        [Authorize]
+        public async Task<IActionResult> Create([Bind("ComentarioId,Descripcion,BlogId")] Comentario comentario)
         {
             if (ModelState.IsValid)
             {
+                var identidad = User.Identity as ClaimsIdentity;
+                string idUsuarioLogueado = identidad.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+                comentario.UsuarioCreacionId = idUsuarioLogueado;
+                comentario.FechaCreacion = DateTime.Now;
+
                 _context.Add(comentario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -73,6 +81,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         }
 
         // GET: Comentarios/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -95,6 +104,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("ComentarioId,UsuarioCreacionId,Descripcion,FechaCreacion,BlogId")] Comentario comentario)
         {
             if (id != comentario.ComentarioId)
@@ -128,6 +138,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         }
 
         // GET: Comentarios/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -150,6 +161,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // POST: Comentarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var comentario = await _context.Comentarios.FindAsync(id);

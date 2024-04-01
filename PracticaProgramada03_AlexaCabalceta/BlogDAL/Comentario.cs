@@ -15,7 +15,6 @@ namespace BlogDAL
         [Required]
         public int ComentarioId { get; set; }
 
-        [Required]
         [Display(Name = "Nombre del Usuario")]
         public string UsuarioCreacionId { get; set; }
 
@@ -24,7 +23,6 @@ namespace BlogDAL
         [Display(Name = "Comentario")]
         public string Descripcion { get; set; }
 
-        [Required]
         [Display(Name = "Fecha de Creación")]
         public DateTime FechaCreacion { get; set; }
 

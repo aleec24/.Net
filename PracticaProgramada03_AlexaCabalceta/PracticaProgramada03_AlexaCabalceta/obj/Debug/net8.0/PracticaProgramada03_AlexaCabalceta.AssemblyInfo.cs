@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PracticaProgramada03_AlexaCabalceta")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3ba30482bf09e1619ad5f88b9b5eb8fb64e549b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+240821bc515e94e04d8d0eb70a34deba4203e81f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PracticaProgramada03_AlexaCabalceta")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PracticaProgramada03_AlexaCabalceta")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

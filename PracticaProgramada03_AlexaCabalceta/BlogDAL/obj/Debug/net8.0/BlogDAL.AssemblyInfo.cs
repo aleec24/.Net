@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlogDAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3ba30482bf09e1619ad5f88b9b5eb8fb64e549b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+240821bc515e94e04d8d0eb70a34deba4203e81f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlogDAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlogDAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

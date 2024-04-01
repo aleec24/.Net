@@ -130,6 +130,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Areas.Identity.Pages.Account
                     _logger.LogInformation("User created a new account with password.");
 
                     var resultRole = await _userManager.AddToRoleAsync(user, "User");
+                    TempData["MensajeExito"] = "Bienvenido!!";
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return LocalRedirect(returnUrl);

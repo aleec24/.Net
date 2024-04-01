@@ -116,6 +116,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    TempData["MensajeExito"] = "Bienvenido!!";
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

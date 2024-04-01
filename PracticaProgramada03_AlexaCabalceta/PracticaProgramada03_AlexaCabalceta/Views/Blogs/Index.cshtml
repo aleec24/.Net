@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BlogDAL.Blog>
+﻿@using System.Security.Claims
+@model IEnumerable<BlogDAL.Blog>
 
 @{
     ViewData["Title"] = "Index";
@@ -7,9 +8,17 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@{
+    var identidad = User.Identity as ClaimsIdentity;
+    var roles = identidad.Claims.Where(c => c.Type == ClaimTypes.Role).ToList();
+
+    if (roles.Select(r => r.Value).Contains("User"))
+    {
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+    }
+}
 <table class="table">
     <thead>
         <tr>
@@ -37,11 +46,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UsuarioCreacion.Nombre)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BlogId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BlogId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BlogId">Delete</a>
-            </td>
+                <td>
+                    @{
+                        if (roles.Select(r => r.Value).Contains("User"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.BlogId">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.BlogId"> Delete</a>
+                        }
+                    }
+                    <a asp-action="Details" asp-route-id="@item.BlogId">Details</a>
+
+                </td>
         </tr>
 }
     </tbody>

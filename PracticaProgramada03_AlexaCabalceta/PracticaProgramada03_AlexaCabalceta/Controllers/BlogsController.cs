@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BlogDAL;
+using System.Security.Claims;
 
 namespace PracticaProgramada03_AlexaCabalceta.Controllers
 {
@@ -56,10 +57,13 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BlogId,Titulo,Descripcion,UsuarioCreacionId")] Blog blog)
+        public async Task<IActionResult> Create([Bind("BlogId,Titulo,Descripcion")] Blog blog)
         {
             if (ModelState.IsValid)
             {
+                var identidad = User.Identity as ClaimsIdentity;
+                string idUsuarioLogueado = identidad.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+                blog.UsuarioCreacionId = idUsuarioLogueado;
                 _context.Add(blog);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -90,7 +94,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BlogId,Titulo,Descripcion,Nombre")] Blog blog)
+        public async Task<IActionResult> Edit(int id, [Bind("BlogId,Titulo,Descripcion,UsuarioCreacionId")] Blog blog)
         {
             if (id != blog.BlogId)
             {
