@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AyIbacMonLHR7ZdUn4nfJl+b2SbnCeDPfPuYGAtN02DSuLExCeWxJ1dU5s4WkEMDDY6cJptVIHwrByt4z/QHPA==",
+  "dgSpecHash": "0hMBwwude1O/KtiCzRrrFkcYaezWJFV6u68DKpf39ewr9p7mxHVEnb4DRIs//0kRiXXisB9qsr2TbLv5FLdyIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

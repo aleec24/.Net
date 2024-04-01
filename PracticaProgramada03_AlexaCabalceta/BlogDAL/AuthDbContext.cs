@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BlogDAL
 {
-    public class AuthDbContext : IdentityDbContext<AplicationUser>
+    public class AuthDbContext : IdentityDbContext<ApplicationUser>
     {
         public AuthDbContext() { }
 

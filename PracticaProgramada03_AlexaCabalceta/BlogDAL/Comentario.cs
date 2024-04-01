@@ -17,7 +17,7 @@ namespace BlogDAL
 
         [Required]
         [Display(Name = "Nombre del Usuario")]
-        public string NombreUsuario { get; set; }
+        public string UsuarioCreacionId { get; set; }
 
         [Required]
         [MaxLength(300)]
@@ -31,6 +31,9 @@ namespace BlogDAL
         [ForeignKey("BlogId")]
         [Display(Name = "Blog")]
         public int BlogId { get; set; }
+
+        [Display(Name = "Usuario")]
+        public ApplicationUser? UsuarioCreacion { get; set; }
 
         public Blog? Blog { get; set; }
     }

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlogDAL
-build_property.ProjectDir = C:\Users\alexa\source\repos\PracticaProgramada03_AlexaCabalceta\BlogDAL\
+build_property.ProjectDir = C:\Users\alexa\Documents\GitHub\.Net\PracticaProgramada03_AlexaCabalceta\BlogDAL\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

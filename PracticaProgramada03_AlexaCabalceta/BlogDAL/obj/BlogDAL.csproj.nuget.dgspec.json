@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj": {}
+    "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj": {
+    "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj",
         "projectName": "BlogDAL",
-        "projectPath": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj",
+        "projectPath": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",

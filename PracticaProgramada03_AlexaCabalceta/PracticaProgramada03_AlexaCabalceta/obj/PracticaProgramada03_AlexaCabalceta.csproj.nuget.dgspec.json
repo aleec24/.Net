@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta.csproj": {}
+    "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj": {
+    "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj",
         "projectName": "BlogDAL",
-        "projectPath": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj",
+        "projectPath": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -77,14 +77,14 @@
         }
       }
     },
-    "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta.csproj": {
+    "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta.csproj",
         "projectName": "PracticaProgramada03_AlexaCabalceta",
-        "projectPath": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta.csproj",
+        "projectPath": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\PracticaProgramada03_AlexaCabalceta\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -101,8 +101,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj": {
-                "projectPath": "C:\\Users\\alexa\\source\\repos\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj"
+              "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj": {
+                "projectPath": "C:\\Users\\alexa\\Documents\\GitHub\\.Net\\PracticaProgramada03_AlexaCabalceta\\BlogDAL\\BlogDAL.csproj"
               }
             }
           }
@@ -121,6 +121,14 @@
               "target": "Package",
               "version": "[8.0.3, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.3, )"
@@ -132,6 +140,10 @@
               "version": "[8.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.3, )"
             },

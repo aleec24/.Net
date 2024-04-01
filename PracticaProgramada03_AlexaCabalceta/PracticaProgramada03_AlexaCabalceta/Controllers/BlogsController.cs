@@ -21,7 +21,8 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // GET: Blogs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Blogs.ToListAsync());
+            var blogDbContext = _context.Blogs.Include(b => b.UsuarioCreacion);
+            return View(await blogDbContext.ToListAsync());
         }
 
         // GET: Blogs/Details/5
@@ -33,6 +34,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
             }
 
             var blog = await _context.Blogs
+                .Include(b => b.UsuarioCreacion)
                 .FirstOrDefaultAsync(m => m.BlogId == id);
             if (blog == null)
             {
@@ -45,6 +47,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // GET: Blogs/Create
         public IActionResult Create()
         {
+            ViewData["UsuarioCreacionId"] = new SelectList(_context.Set<ApplicationUser>(), "Id", "Nombre");
             return View();
         }
 
@@ -53,7 +56,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BlogId,Titulo,Descripcion")] Blog blog)
+        public async Task<IActionResult> Create([Bind("BlogId,Titulo,Descripcion,UsuarioCreacionId")] Blog blog)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +64,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["UsuarioCreacionId"] = new SelectList(_context.Set<ApplicationUser>(), "Id", "Nombre", blog.UsuarioCreacionId);
             return View(blog);
         }
 
@@ -77,6 +81,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
             {
                 return NotFound();
             }
+            ViewData["UsuarioCreacionId"] = new SelectList(_context.Set<ApplicationUser>(), "Id", "Nombre", blog.UsuarioCreacionId);
             return View(blog);
         }
 
@@ -85,7 +90,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BlogId,Titulo,Descripcion")] Blog blog)
+        public async Task<IActionResult> Edit(int id, [Bind("BlogId,Titulo,Descripcion,Nombre")] Blog blog)
         {
             if (id != blog.BlogId)
             {
@@ -112,6 +117,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["UsuarioCreacionId"] = new SelectList(_context.Set<ApplicationUser>(), "Id", "Nombre", blog.UsuarioCreacionId);
             return View(blog);
         }
 
@@ -124,6 +130,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
             }
 
             var blog = await _context.Blogs
+                .Include(b => b.UsuarioCreacion)
                 .FirstOrDefaultAsync(m => m.BlogId == id);
             if (blog == null)
             {

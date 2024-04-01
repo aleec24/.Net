@@ -24,6 +24,12 @@ namespace BlogDAL
         [Display(Name = "Descripción")]
         public string Descripcion { get; set; }
 
+        [Required]
+        [Display(Name = "Autor del Blog")]
+        public string UsuarioCreacionId { get; set; }
+
+        [Display(Name = "Autor")]
+        public ApplicationUser? UsuarioCreacion { get; set; }
         public ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
 
     }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BlogDAL;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PracticaProgramada03_AlexaCabalceta.Controllers
 {
@@ -21,7 +22,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // GET: Comentarios
         public async Task<IActionResult> Index()
         {
-            var blogDbContext = _context.Comentarios.Include(c => c.Blog);
+            var blogDbContext = _context.Comentarios.Include(c => c.Blog).Include(c => c.UsuarioCreacion);
             return View(await blogDbContext.ToListAsync());
         }
 
@@ -35,6 +36,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
 
             var comentario = await _context.Comentarios
                 .Include(c => c.Blog)
+                .Include(c => c.UsuarioCreacion)
                 .FirstOrDefaultAsync(m => m.ComentarioId == id);
             if (comentario == null)
             {
@@ -48,6 +50,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         public IActionResult Create()
         {
             ViewData["BlogId"] = new SelectList(_context.Blogs, "BlogId", "Titulo");
+            ViewData["UsuarioCreacionId"] = new SelectList(_context.Set<ApplicationUser>(), "Id", "Nombre");
             return View();
         }
 
@@ -56,7 +59,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ComentarioId,NombreUsuario,Descripcion,FechaCreacion,BlogId")] Comentario comentario)
+        public async Task<IActionResult> Create([Bind("ComentarioId,UsuarioCreacionId,Descripcion,FechaCreacion,BlogId")] Comentario comentario)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +67,8 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BlogId"] = new SelectList(_context.Blogs, "BlogId", "Titulo", comentario.BlogId);
+            ViewData["BlogId"] = new SelectList(_context.Blogs, "BlogId", "Descripcion", comentario.BlogId);
+            ViewData["UsuarioCreacionId"] = new SelectList(_context.Set<ApplicationUser>(), "Id", "Nombre", comentario.UsuarioCreacionId);
             return View(comentario);
         }
 
@@ -82,6 +86,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
                 return NotFound();
             }
             ViewData["BlogId"] = new SelectList(_context.Blogs, "BlogId", "Titulo", comentario.BlogId);
+            ViewData["UsuarioCreacionId"] = new SelectList(_context.Set<ApplicationUser>(), "Id", "Nombre", comentario.UsuarioCreacionId);
             return View(comentario);
         }
 
@@ -90,7 +95,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ComentarioId,NombreUsuario,Descripcion,FechaCreacion,BlogId")] Comentario comentario)
+        public async Task<IActionResult> Edit(int id, [Bind("ComentarioId,UsuarioCreacionId,Descripcion,FechaCreacion,BlogId")] Comentario comentario)
         {
             if (id != comentario.ComentarioId)
             {
@@ -118,6 +123,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["BlogId"] = new SelectList(_context.Blogs, "BlogId", "Titulo", comentario.BlogId);
+            ViewData["UsuarioCreacionId"] = new SelectList(_context.Set<ApplicationUser>(), "Id", "Nombre", comentario.UsuarioCreacionId);
             return View(comentario);
         }
 
@@ -131,6 +137,7 @@ namespace PracticaProgramada03_AlexaCabalceta.Controllers
 
             var comentario = await _context.Comentarios
                 .Include(c => c.Blog)
+                .Include(c => c.UsuarioCreacion)
                 .FirstOrDefaultAsync(m => m.ComentarioId == id);
             if (comentario == null)
             {
